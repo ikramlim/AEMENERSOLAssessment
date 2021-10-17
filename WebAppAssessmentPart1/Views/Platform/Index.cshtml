@@ -1,0 +1,93 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+}
+<div data-id="divPlatformControl" data-type="DivTemplate" data-position="RightContent">
+    <div class="TapsControl">
+        <table data-id="TableList" class="table table-bordered gridview">
+            <thead>
+                <tr>
+                    <th data-column="id"></th>
+                    <th data-column="platformId"></th>
+                    <th data-column="uniqueName"></th>
+                    <th data-column="latitude"></th>
+                    <th data-column="longitude"></th>
+                    <th data-column="createdAt"></th>
+                    <th data-column="updatedAt"></th>
+
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="table-text">
+                    <td colspan="10"><label data-ResourceProviderKey="lblNoRecordFound"></label></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+
+@section scripts {
+    
+    <script type="text/javascript">
+
+
+
+
+
+        @*$(document).ready(function () {
+            var token = sessionStorage.getItem("token");
+            debugger;
+            $.ajax({
+                url: "http://test-demo.aemenersol.com/api/PlatformWell/GetPlatformWellActual",
+                //headers: { "Authorization": sessionStorage.getItem('token') },
+                headers: {
+                    Authorization: 'Bearer ' + token
+                },
+                type: 'GET',
+                success: function (dataPass) {
+                    //success method
+                    //$.each(data, function (index, element) {
+                    //    console.log(data);
+                    //});
+
+                    passingData(dataPass, token);
+
+                },
+                error: function () {
+                    //
+                }
+            });
+
+
+
+            function passingData(dataPass, token) {
+                var result = { "result": JSON.stringify(dataPass) };
+                $.ajax({
+
+                    url: '@Url.Action("insert", "Platform")',
+                    //data: { result, token: token},
+                    data: "result",
+                    type: 'POST',
+                    dataType: "text",
+                    contentType: "application/json; charset=utf-8",
+                    success: function (data) {
+                        //success method
+
+                    },
+                    error: function () {
+                        //
+                    }
+                });
+            }
+
+            
+        });*@
+
+
+
+
+    </script>
+
+}
